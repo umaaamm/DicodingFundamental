@@ -10,12 +10,12 @@ import SwiftUI
 struct Profil: View {
     var body: some View {
         VStack {
-            VStack{
+            VStack {
                 Rectangle().foregroundColor(Color(UIColor(named: "putih_bg")!))
                     .edgesIgnoringSafeArea(.top)
                     .frame(height: 180)
                 Image("profile").resizable().aspectRatio(contentMode: .fill)
-                    .clipShape(Circle()).frame(width :200,height: 200)
+                    .clipShape(Circle()).frame(width: 200, height: 200)
                     .overlay(Circle().stroke(Color.white, lineWidth: 4))
                     .shadow(radius: 10)
                     .offset(y: -120).padding(.bottom, -130)

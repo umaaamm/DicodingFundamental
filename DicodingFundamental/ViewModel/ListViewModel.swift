@@ -7,23 +7,19 @@
 
 import Foundation
 
-class ListViewModel : ObservableObject {
-    
+class ListViewModel: ObservableObject {
     private let repository: ListRepository
     @Published var isAnimatingLoading: Bool = true
-    @Published var isAlert: Bool = false
     @Published var dataGames: [Result] = []
     @Published var query: String = "" {
         didSet {
             self.getGames()
         }
     }
-    
     init(repository: ListRepository = Services.instance) {
         self.repository = repository
     }
-    
-    func getGames(){
+    func getGames() {
         self.isAnimatingLoading = true
         if query.isEmpty {
             self.repository.fetchGames { [weak self] (result) in
@@ -37,7 +33,6 @@ class ListViewModel : ObservableObject {
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.isAnimatingLoading = false
-                        self.isAlert =  true
                         print(error.localizedDescription)
                     }
                 }
@@ -54,7 +49,6 @@ class ListViewModel : ObservableObject {
                 case .failure(let error):
                     DispatchQueue.main.async {
                         self.isAnimatingLoading = false
-                        self.isAlert =  true
                         print(error.localizedDescription)
                     }
                 }

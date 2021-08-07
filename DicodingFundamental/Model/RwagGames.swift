@@ -13,7 +13,6 @@ struct RawgGames: Codable {
     let next: String
     let previous: String?
     let results: [Result]
-    
     enum CodingKeys: String, CodingKey {
         case count, next, previous, results
     }
@@ -25,8 +24,7 @@ struct Result: Codable, Identifiable {
     let slug, name, released: String
     let background_image: String?
     let rating: Double
-    let playtime : Int?
-    
+    let playtime: Int?
     enum CodingKeys: String, CodingKey {
         case id, slug, name, released
         case background_image

@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct LayoutList : View {
+struct LayoutList: View {
     let item: Result
     var body: some View {
-        HStack(){
+        HStack {
             ImageList(withURL: item.background_image ?? "")
-            VStack(alignment: .leading, spacing: 10){
+            VStack(alignment: .leading, spacing: 10) {
                 Text(item.name).font(.headline).bold()
-                HStack{
+                HStack {
                     Image(systemName: "star.fill").foregroundColor(.yellow).font(.subheadline)
                     Text(String(item.rating)).font(.subheadline).foregroundColor(Color.gray)
                     Image(systemName: "play.circle.fill").foregroundColor(.yellow).font(.subheadline)
@@ -22,12 +22,10 @@ struct LayoutList : View {
                     Spacer(minLength: 5)
                 }
                 Text("Game Release : \(formattedDateFromString(dateString: item.released) ?? "")").font(.footnote)
-            }.padding(.leading,8)
-            
+            }.padding(.leading, 8)
         }.padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
     }
 }
-
 
 struct LayoutList_Previews: PreviewProvider {
     static var previews: some View {

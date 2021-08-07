@@ -7,21 +7,17 @@
 
 import Foundation
 
-class DetailGamesViewModel : ObservableObject {
-    
-    private let DetailGamesRepository: DetailGamesListRepository
+class DetailGamesViewModel: ObservableObject {
+    private let detailGamesRepository: DetailGamesListRepository
     @Published var isAnimatingLoading: Bool = true
     @Published var isAlert: Bool = false
     @Published var dataDetailGames: DetailGamesModel?
-    
-    init(DetailGamesRepository: DetailGamesListRepository = Services.instance) {
-        self.DetailGamesRepository = DetailGamesRepository
+    init(detailGamesRepository: DetailGamesListRepository = Services.instance) {
+        self.detailGamesRepository = detailGamesRepository
     }
-    
-    func getDetailGames(id : Int){
+    func getDetailGames(id: Int) {
         self.isAnimatingLoading = true
-        self.DetailGamesRepository.getGamesDetail(id : id) {[weak self] (result) in
-            
+        self.detailGamesRepository.getGamesDetail(id: id) {[weak self] (result) in
             guard let self = self else { return }
             switch result {
             case .success(let detailGame):

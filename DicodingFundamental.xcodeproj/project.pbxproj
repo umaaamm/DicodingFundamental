@@ -17,7 +17,7 @@
 		8EF32DD526BD5E7A00BE3EBB /* RwagGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DD426BD5E7A00BE3EBB /* RwagGames.swift */; };
 		8EF32DD726BD5EAD00BE3EBB /* DetailGamesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DD626BD5EAD00BE3EBB /* DetailGamesModel.swift */; };
 		8EF32DDB26BD6C5500BE3EBB /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DDA26BD6C5500BE3EBB /* ListViewModel.swift */; };
-		8EF32DDD26BD6C7000BE3EBB /* DetailGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DDC26BD6C7000BE3EBB /* DetailGamesViewModel.swift */; };
+		8EF32DDD26BD6C7000BE3EBB /* detailGamesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DDC26BD6C7000BE3EBB /* detailGamesViewModel.swift */; };
 		8EF32DDF26BD6CA900BE3EBB /* DetailGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DDE26BD6CA900BE3EBB /* DetailGames.swift */; };
 		8EF32DE126BD6CB300BE3EBB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DE026BD6CB300BE3EBB /* Profile.swift */; };
 		8EF32DE326BD6D2E00BE3EBB /* ImageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DE226BD6D2E00BE3EBB /* ImageList.swift */; };
@@ -64,7 +64,7 @@
 		8EF32DD426BD5E7A00BE3EBB /* RwagGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RwagGames.swift; sourceTree = "<group>"; };
 		8EF32DD626BD5EAD00BE3EBB /* DetailGamesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGamesModel.swift; sourceTree = "<group>"; };
 		8EF32DDA26BD6C5500BE3EBB /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
-		8EF32DDC26BD6C7000BE3EBB /* DetailGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGamesViewModel.swift; sourceTree = "<group>"; };
+		8EF32DDC26BD6C7000BE3EBB /* detailGamesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailGamesViewModel.swift; sourceTree = "<group>"; };
 		8EF32DDE26BD6CA900BE3EBB /* DetailGames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailGames.swift; sourceTree = "<group>"; };
 		8EF32DE026BD6CB300BE3EBB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		8EF32DE226BD6D2E00BE3EBB /* ImageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageList.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF32DDA26BD6C5500BE3EBB /* ListViewModel.swift */,
-				8EF32DDC26BD6C7000BE3EBB /* DetailGamesViewModel.swift */,
+				8EF32DDC26BD6C7000BE3EBB /* detailGamesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -241,6 +241,7 @@
 				8E2A470D26BD5904005D639D /* Sources */,
 				8E2A470E26BD5904005D639D /* Frameworks */,
 				8E2A470F26BD5904005D639D /* Resources */,
+				8EF32DF826BE7CF800BE3EBB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -355,6 +356,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8EF32DF826BE7CF800BE3EBB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E2A470D26BD5904005D639D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -367,7 +388,7 @@
 				8EF32DEB26BD6DA000BE3EBB /* Loading.swift in Sources */,
 				8EF32DDF26BD6CA900BE3EBB /* DetailGames.swift in Sources */,
 				8E2A471526BD5904005D639D /* DicodingFundamentalApp.swift in Sources */,
-				8EF32DDD26BD6C7000BE3EBB /* DetailGamesViewModel.swift in Sources */,
+				8EF32DDD26BD6C7000BE3EBB /* detailGamesViewModel.swift in Sources */,
 				8EF32DF326BD819200BE3EBB /* Helper.swift in Sources */,
 				8EF32DED26BD6DB200BE3EBB /* FormatTanggal.swift in Sources */,
 				8EF32DF726BDA68800BE3EBB /* Extension.swift in Sources */,

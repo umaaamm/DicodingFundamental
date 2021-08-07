@@ -16,7 +16,6 @@ struct DetailGamesModel: Codable, Identifiable {
     let backgroundImageAdditional: String?
     let rating: Double?
     let playtime: Int?
-    
     enum CodingKeys: String, CodingKey {
         case id, slug, name
         case nameOriginal

@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ImageBanner: View {
     @ObservedObject var getImage: GetImage
-    @State var image:UIImage = UIImage()
+    @State var image: UIImage = UIImage()
 
-    init(withURL url:String) {
-        getImage = GetImage(urlString:url)
+    init(withURL url: String) {
+        getImage = GetImage(urlString: url)
     }
 
     var body: some View {
-        ZStack(){
+        ZStack {
             Rectangle().fill(Color.gray.opacity(0.3))
             Image(uiImage: image)
                 .resizable()
@@ -28,10 +28,8 @@ struct ImageBanner: View {
     }
 }
 
-
 struct ImageBanner_Previews: PreviewProvider {
     static var previews: some View {
         ImageBanner(withURL: "Dummy Url")
     }
 }
-

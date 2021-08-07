@@ -9,13 +9,12 @@ import SwiftUI
 
 struct ImageList: View {
     @ObservedObject var getImage: GetImage
-    @State var image:UIImage = UIImage()
-    
-    init(withURL url:String) {
-        getImage = GetImage(urlString:url)
+    @State var image: UIImage = UIImage()
+    init(withURL url: String) {
+        getImage = GetImage(urlString: url)
     }
     var body: some View {
-        VStack(alignment: .leading){
+        VStack(alignment: .leading) {
             Image(uiImage: image)
                 .resizable().frame(width: 80, height: 80)
                 .cornerRadius(10).shadow(radius: 5)

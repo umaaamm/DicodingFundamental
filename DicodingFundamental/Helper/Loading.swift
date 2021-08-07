@@ -22,7 +22,6 @@ struct ActivityIndicator: UIViewRepresentable {
     }
 }
 
-
 struct LoadingView<Content>: View where Content: View {
 
     @Binding var isShowing: Bool
@@ -51,4 +50,3 @@ struct LoadingView<Content>: View where Content: View {
         }
     }
 }
-
