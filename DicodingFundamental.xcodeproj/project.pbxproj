@@ -27,6 +27,7 @@
 		8EF32DEB26BD6DA000BE3EBB /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DEA26BD6DA000BE3EBB /* Loading.swift */; };
 		8EF32DED26BD6DB200BE3EBB /* FormatTanggal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DEC26BD6DB200BE3EBB /* FormatTanggal.swift */; };
 		8EF32DF326BD819200BE3EBB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DF226BD819200BE3EBB /* Helper.swift */; };
+		8EF32DF726BDA68800BE3EBB /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF32DF626BDA68800BE3EBB /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		8EF32DEA26BD6DA000BE3EBB /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		8EF32DEC26BD6DB200BE3EBB /* FormatTanggal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTanggal.swift; sourceTree = "<group>"; };
 		8EF32DF226BD819200BE3EBB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8EF32DF626BDA68800BE3EBB /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				8EF32DEA26BD6DA000BE3EBB /* Loading.swift */,
 				8EF32DEC26BD6DB200BE3EBB /* FormatTanggal.swift */,
 				8EF32DF226BD819200BE3EBB /* Helper.swift */,
+				8EF32DF626BDA68800BE3EBB /* Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				8EF32DDD26BD6C7000BE3EBB /* DetailGamesViewModel.swift in Sources */,
 				8EF32DF326BD819200BE3EBB /* Helper.swift in Sources */,
 				8EF32DED26BD6DB200BE3EBB /* FormatTanggal.swift in Sources */,
+				8EF32DF726BDA68800BE3EBB /* Extension.swift in Sources */,
 				8EF32DE526BD6D3900BE3EBB /* ImageBanner.swift in Sources */,
 				8EF32DE926BD6D9500BE3EBB /* GetImage.swift in Sources */,
 				8EF32DE126BD6CB300BE3EBB /* Profile.swift in Sources */,

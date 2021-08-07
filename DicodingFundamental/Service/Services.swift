@@ -13,6 +13,7 @@ typealias ListCompletionDetailGames = (Swift.Result<DetailGamesModel, NetworkErr
 
 protocol ListRepository {
     func fetchGames(completion: @escaping ListCompletion)
+    func fetchGamesSearch(query: String?, completion: @escaping ListCompletion)
 }
 
 protocol DetailGamesListRepository {
@@ -22,13 +23,39 @@ protocol DetailGamesListRepository {
 class Services: ListRepository, DetailGamesListRepository {
     
     static let instance: Services = Services()
-    
+    private let key = "4b3457d69fc84c53b2e0f0d0155eb17b"
     private let baseApiUrl = "https://api.rawg.io"
+    private let baseApiUrlSearch = "https://api.rawg.io/api/"
     private let urlSession = URLSession.shared
     
     func fetchGames(completion: @escaping ListCompletion) {
         let url = self.generateUrl(path: UrlPath.urlDetail)
         self.urlSession.dataTask(with: url){ (data, response, error) in
+            if let errorResponse = error {
+                print("Error response : \(errorResponse.localizedDescription)")
+            }else {
+                do {
+                    let result = try JSONDecoder().decode(RawgGames.self, from: data!)
+                    completion(.success(result))
+                }catch let error {
+                    completion(.failure(.requestFailed))
+                    print("Failed to get Games : \(error)")
+                }
+            }
+        }.resume()
+    }
+    
+    func fetchGamesSearch(query: String?, completion: @escaping ListCompletion) {
+        var components: URLComponents = URLComponents(string: self.baseApiUrlSearch + "games")!
+        if let searchQuery = query, !searchQuery.isEmpty {
+            components.queryItems = [
+                URLQueryItem(name: "search", value: query),
+                URLQueryItem(name: "key", value: self.key)
+            ]
+        }
+       
+        let request = URLRequest(url: components.url!)
+        self.urlSession.dataTask(with: request){ (data, response, error) in
             if let errorResponse = error {
                 print("Error response : \(errorResponse.localizedDescription)")
             }else {
