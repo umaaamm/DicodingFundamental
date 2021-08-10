@@ -21,7 +21,8 @@ struct RawgGames: Codable {
 // MARK: - Result
 struct Result: Codable, Identifiable {
     let id: Int
-    let slug, name, released: String
+    let released: String?
+    let slug, name: String
     let background_image: String?
     let rating: Double
     let playtime: Int?

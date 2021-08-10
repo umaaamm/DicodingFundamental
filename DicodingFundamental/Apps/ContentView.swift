@@ -20,6 +20,7 @@ struct ContentView: View {
         UINavigationBar.appearance().compactAppearance = coloredAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
         UINavigationBar.appearance().tintColor = .white
+        UITableViewCell.appearance().selectionStyle = .none
     }
     var body: some View {
         NavigationView {
@@ -37,7 +38,7 @@ struct ContentView: View {
                                         NavigationLink(destination: DetailGames(itemDetail: item )) {
                                             EmptyView()
                                         }
-                                    }
+                                    }.listRowBackground(Color(UIColor.white))
                                 }
                             } else {
                                 Text("Data Tidak ditemukan, silahkan cari dengan kata lain")

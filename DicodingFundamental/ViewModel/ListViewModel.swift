@@ -6,18 +6,23 @@
 //
 
 import Foundation
+import Combine
 
 class ListViewModel: ObservableObject {
     private let repository: ListRepository
+    private var cancellable: AnyCancellable?
     @Published var isAnimatingLoading: Bool = true
     @Published var dataGames: [Result] = []
-    @Published var query: String = "" {
-        didSet {
-            self.getGames()
-        }
-    }
+    @Published var query: String = ""
     init(repository: ListRepository = Services.instance) {
         self.repository = repository
+        cancellable = AnyCancellable(
+            $query.removeDuplicates()
+                .debounce(for: 0.8, scheduler: DispatchQueue.main)
+                .sink(receiveValue: { _ in
+                    self.getGames()
+                })
+        )
     }
     func getGames() {
         self.isAnimatingLoading = true

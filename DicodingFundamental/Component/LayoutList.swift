@@ -21,7 +21,7 @@ struct LayoutList: View {
                     Text("\(String(item.playtime ?? 0)) hours").foregroundColor(Color.gray).font(.subheadline)
                     Spacer(minLength: 5)
                 }
-                Text("Game Release : \(formattedDateFromString(dateString: item.released) ?? "")").font(.footnote)
+                Text("Game Release : \(formattedDateFromString(dateString: item.released ?? "") ?? "")").font(.footnote)
             }.padding(.leading, 8)
         }.padding(.init(top: 12, leading: 0, bottom: 12, trailing: 0))
     }
@@ -29,6 +29,6 @@ struct LayoutList: View {
 
 struct LayoutList_Previews: PreviewProvider {
     static var previews: some View {
-        LayoutList(item: Result(id: 1, slug: "Dummy Slug", name: "Dummy Nama", released: "2021-08-6", background_image: "Dummy Gambar", rating: 4.8, playtime: 40))
+        LayoutList(item: Result(id: 1, released: "2021-08-6", slug: "Dummy Slug", name: "Dummy Nama", background_image: "Dummy Gambar", rating: 4.8, playtime: 40))
     }
 }

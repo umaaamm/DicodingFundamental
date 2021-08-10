@@ -50,6 +50,6 @@ struct DetailGames: View {
 
 struct DetailGames_Previews: PreviewProvider {
     static var previews: some View {
-        DetailGames(itemDetail: Result(id: 1, slug: "Dummy Slug", name: "Dummy Nama", released: "2021-08-6", background_image: "Dummy Gambar", rating: 4.5, playtime: 30))
+        DetailGames(itemDetail: Result(id: 1, released: "2021-08-6", slug: "Dummy Slug", name: "Dummy Nama", background_image: "Dummy Gambar", rating: 4.5, playtime: 30))
     }
 }
