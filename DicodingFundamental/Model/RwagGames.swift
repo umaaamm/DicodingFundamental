@@ -10,7 +10,7 @@ import Foundation
 // MARK: - RawgGames
 struct RawgGames: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let previous: String?
     let results: [Result]
     enum CodingKeys: String, CodingKey {

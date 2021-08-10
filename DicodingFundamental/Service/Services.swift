@@ -27,7 +27,7 @@ class Services: ListRepository, DetailGamesListRepository {
     private let urlSession = URLSession.shared
     func fetchGames(completion: @escaping ListCompletion) {
         let url = self.generateUrl(path: UrlPath.urlDetail)
-        self.urlSession.dataTask(with: url) { (data, response, error) in
+        self.urlSession.dataTask(with: url) { (data, _, error) in
             if let errorResponse = error {
                 print("Error response : \(errorResponse.localizedDescription)")
             } else {
@@ -50,7 +50,7 @@ class Services: ListRepository, DetailGamesListRepository {
             ]
         }
         let request = URLRequest(url: components.url!)
-        self.urlSession.dataTask(with: request) { (data, response, error) in
+        self.urlSession.dataTask(with: request) { (data, _, error) in
             if let errorResponse = error {
                 print("Error response : \(errorResponse.localizedDescription)")
             } else {
@@ -66,7 +66,7 @@ class Services: ListRepository, DetailGamesListRepository {
     }
     func getGamesDetail(id: Int, completion: @escaping ListCompletionDetailGames) {
         let url = URL(string: "\(baseApiUrl)/api/games/\(id)?key=4b3457d69fc84c53b2e0f0d0155eb17b")!
-        self.urlSession.dataTask(with: url) { (data, response, error) in
+        self.urlSession.dataTask(with: url) { (data, _, error) in
             if let errorResponse = error {
                 print("Error response detail games : \(errorResponse.localizedDescription)")
             } else {

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailGames : View {
+struct DetailGames: View {
     let itemDetail: Result
     @ObservedObject var detailGames = DetailGamesViewModel()
     var body: some View {
@@ -33,7 +33,7 @@ struct DetailGames : View {
                                                                                              options: String.CompareOptions.regularExpression, range: nil) ?? "-").font(.subheadline)
                 }
             }
-            .navigationBarTitle(Text(self.itemDetail.name))
+            .navigationBarTitle(Text("Detail Games"))
             .onAppear {
                 self.detailGames.getDetailGames(id: self.itemDetail.id)
                 if #available(iOS 14.0, *) {

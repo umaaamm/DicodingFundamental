@@ -3,6 +3,12 @@ type_name:
 
 identifier_name:
   allowed_symbols: "_"
+  min_length: # only min_length
+    warning: 0 # only error
+  excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
 
 line_length:
     warning: 150
